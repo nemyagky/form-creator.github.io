@@ -1,0 +1,204 @@
+@mixin text 
+   font-size: 15px
+   font-weight: 500
+   color: gray
+   font-family: Consolas
+   font-weight: 600
+
+@mixin center
+   display: flex
+   justify-content: center
+   align-items: center
+   
+   
+body
+   margin: 0
+   display: flex
+   flex-direction: column
+   @media (min-width: 1300px)
+      align-items: center
+   
+
+.user-forms
+   display: flex
+   width: 1300px
+   height: 100px
+
+
+
+.tool
+   display: flex
+   align-items: center
+   padding-left: 20px
+   width: 180px
+   height: 50px
+   box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3)
+   margin-bottom: 6px
+   user-select: none
+   cursor: pointer
+   i
+      font-size: 19px
+      margin-right: 5px
+      color: #333
+   p
+      @include text
+
+.new-element
+   @include center
+   position: absolute
+   width: 150px
+   height: 40px
+   background-color: #01FFC1
+   box-shadow: 0 2px 3px 1px rgba(0,0,0,0.3)
+   @include text
+   color: #222
+   cursor: move
+   font-size: 18px
+   user-select: none
+
+
+.wrapper
+   width: 1300px
+   display: flex
+
+
+
+.tools_wrapper
+
+.field_wrap
+   display: flex
+   flex-grow: 1
+
+.form_wrapper
+   width: 800px
+   margin-left: 30px
+   transition: 0.5s
+   
+   .form_header
+      display: flex
+      width: 100%
+      height: 50px
+      box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3)
+      .form_header_text
+         font-size: 20px
+         padding-left: 30px
+         color: #111
+         font-family: Consolas
+         border: none
+         flex-grow: 1
+         height: 46px
+      .form_header_save
+         width: 50px
+         height: 50px
+         @include center
+         i
+            font-size: 25px
+            color: #333
+            cursor: pointer
+
+   .form
+      width: 100%
+      height: 500px
+      box-shadow: 0 1px 3px 1px rgba(0,0,0,0.3)
+
+
+      .form_element
+         position: absolute
+         width: 204px
+         height: 55px
+         &:hover
+            .mover
+               opacity: 1
+         .mover
+            width: 50px
+            height: 20px
+            border-radius: 3px 3px 0 0 
+            background-color: #01FFC1
+            cursor: pointer
+            transition: 0.2s
+            cursor: move
+            opacity: 0
+            
+         .label_elem
+            display: flex
+            overflow: hidden
+            align-items: center
+            width: 150px
+            height: 30px 
+            border: 2px solid #E4E4E4
+            border-radius: 3px 
+            i
+               font-size: 15px
+               color: #434067
+               margin: 0 3px 0 10px
+            .form_element_input
+               width: 120px
+               flex-grow: 1
+               background: transparent
+               font-family: Arial
+               font-size: 14px
+               font-weight: 600
+               border: none
+         .button
+            background-color: #fff
+            width: 150px
+            height: 30px
+            border: none
+            box-shadow: 0 2px 5px 1px rgba(0,0,0,0.3)
+
+
+.settings_wrapper
+   position: relative
+   width: 250px
+   margin-left: 30px
+   box-shadow: 0 2px 5px 1px rgba(0,0,0,0.3)
+   transition: 0.3s
+   opacity: 1
+
+
+   .description
+      text-align: center
+      margin-top: 15px
+      @include text
+      color: #000
+      font-size: 20px
+
+   .settings
+
+      .setting
+         display: flex
+         align-items: center
+
+         i
+            margin-left: 15px
+            margin-right: 5px
+         p
+            margin-right: 20px
+            font-size: 13px
+         input[type="range"]
+            width: 100px
+            appearance: none
+            box-shadow: 0 0px 2px 1px rgba(0,0,0,0.3)
+            &::-moz-range-thumb 
+               box-shadow: 0 0px 2px 1px rgba(0,0,0,0.3)
+               height: 14px
+               width: 6px
+               border-radius: 3px
+               background: #ffffff
+               cursor: pointer
+            &::-moz-range-track 
+               width: 100%
+               height: 2px
+               cursor: pointer
+               background: rgba(0,0,0,.1)
+               border-radius: 1.3px
+               
+
+         select
+            width: 100px
+
+
+         input[type="color"]
+            width: 40px
+            height: 23px
+            padding: 2px

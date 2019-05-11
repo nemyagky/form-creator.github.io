@@ -1,0 +1,304 @@
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 1300px) {
+  body {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.user-forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1300px;
+  height: 100px;
+}
+
+.tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+  width: 180px;
+  height: 50px;
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  margin-bottom: 6px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.tool i {
+  font-size: 19px;
+  margin-right: 5px;
+  color: #333;
+}
+
+.tool p {
+  font-size: 15px;
+  font-weight: 500;
+  color: gray;
+  font-family: Consolas;
+  font-weight: 600;
+}
+
+.new-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background-color: #01FFC1;
+  -webkit-box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+  font-weight: 500;
+  color: gray;
+  font-family: Consolas;
+  font-weight: 600;
+  color: #222;
+  cursor: move;
+  font-size: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.wrapper {
+  width: 1300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.field_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.form_wrapper {
+  width: 800px;
+  margin-left: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.form_wrapper .form_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.form_wrapper .form_header .form_header_text {
+  font-size: 20px;
+  padding-left: 30px;
+  color: #111;
+  font-family: Consolas;
+  border: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 46px;
+}
+
+.form_wrapper .form_header .form_header_save {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form_wrapper .form_header .form_header_save i {
+  font-size: 25px;
+  color: #333;
+  cursor: pointer;
+}
+
+.form_wrapper .form {
+  width: 100%;
+  height: 500px;
+  -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.form_wrapper .form .form_element {
+  position: absolute;
+  width: 204px;
+  height: 55px;
+}
+
+.form_wrapper .form .form_element:hover .mover {
+  opacity: 1;
+}
+
+.form_wrapper .form .form_element .mover {
+  width: 50px;
+  height: 20px;
+  border-radius: 3px 3px 0 0;
+  background-color: #01FFC1;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: move;
+  opacity: 0;
+}
+
+.form_wrapper .form .form_element .label_elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  height: 30px;
+  border: 2px solid #E4E4E4;
+  border-radius: 3px;
+}
+
+.form_wrapper .form .form_element .label_elem i {
+  font-size: 15px;
+  color: #434067;
+  margin: 0 3px 0 10px;
+}
+
+.form_wrapper .form .form_element .label_elem .form_element_input {
+  width: 120px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: transparent;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+}
+
+.form_wrapper .form .form_element .button {
+  background-color: #fff;
+  width: 150px;
+  height: 30px;
+  border: none;
+  -webkit-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.settings_wrapper {
+  position: relative;
+  width: 250px;
+  margin-left: 30px;
+  -webkit-box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.settings_wrapper .description {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  color: gray;
+  font-family: Consolas;
+  font-weight: 600;
+  color: #000;
+  font-size: 20px;
+}
+
+.settings_wrapper .settings .setting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings_wrapper .settings .setting i {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.settings_wrapper .settings .setting p {
+  margin-right: 20px;
+  font-size: 13px;
+}
+
+.settings_wrapper .settings .setting input[type="range"] {
+  width: 100px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.settings_wrapper .settings .setting input[type="range"]::-moz-range-thumb {
+  box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.3);
+  height: 14px;
+  width: 6px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.settings_wrapper .settings .setting input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 1.3px;
+}
+
+.settings_wrapper .settings .setting select {
+  width: 100px;
+}
+
+.settings_wrapper .settings .setting input[type="color"] {
+  width: 40px;
+  height: 23px;
+  padding: 2px;
+}
+/*# sourceMappingURL=index.css.map */
