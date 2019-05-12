@@ -1,6 +1,91 @@
 var settingsBlock = document.querySelector('.settings')
 
 
+// Идея такова. Во время создания блока настроек мы просто прописываем готовые классы (создаются в конце этого файла), которые автоматически вставляют нужный html код и различные обработчики
+
+function LabelSettings(elem) {
+   
+   var that = this
+   this.blocks = []
+   this.blocks.push(new Range('fas fa-arrows-alt-h', 'Width', 'width', elem, {min: 100, max: 300, standart: 150}))
+   this.blocks.push(new Range('fas fa-text-width', 'FontSize', 'fontSize', elem, {min: 5, max: 50, standart: 14}))
+   this.blocks.push(new Range('fab fa-cuttlefish', 'borderRadius', 'borderRadius', elem, {min: 0, max: 100, standart: 0}))
+   this.blocks.push(new SelectInSetting('fas fa-font', 'FontFamily', '<select><option>Arial</option><option>Times New Roman</option></select>', 'FontFamily', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'color', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'BackgroundColor', 'background', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'BorderColor', 'border', elem))
+
+   settingsBlock.innerHTML = ''
+   for (var i = 0; i < this.blocks.length; i++) {
+      settingsBlock.appendChild(this.blocks[i].elem)
+   }
+
+}
+
+
+function RadioSettings(elem) {
+   
+   var that = this
+   this.blocks = []
+   this.blocks.push(new TextElem('fas fa-layer-group', 'Group', elem))
+   this.blocks.push(new Range('fas fa-arrows-alt-h', 'Width', 'width', elem, {min: 100, max: 300, standart: 150}))
+   this.blocks.push(new Range('fas fa-text-width', 'FontSize', 'fontSize', elem, {min: 5, max: 50, standart: 14}))
+   this.blocks.push(new Range('fab fa-cuttlefish', 'borderRadius', 'borderRadius', elem, {min: 0, max: 100, standart: 0}))
+   this.blocks.push(new SelectInSetting('fas fa-font', 'FontFamily', '<select><option>Arial</option><option>Times New Roman</option></select>', 'FontFamily', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'color', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'BackgroundColor', 'background', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'BorderColor', 'border', elem))
+
+   settingsBlock.innerHTML = ''
+   for (var i = 0; i < this.blocks.length; i++) {
+      settingsBlock.appendChild(this.blocks[i].elem)
+   }
+
+}
+
+
+function SelectSettings(elem) {
+   
+   var that = this
+   this.blocks = []
+   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'selectColor', elem))
+   this.blocks.push(new OptionAdder(elem))
+
+   settingsBlock.innerHTML = ''
+   for (var i = 0; i < this.blocks.length; i++) {
+      settingsBlock.appendChild(this.blocks[i].elem)
+   }
+
+}
+
+
+function ButtonSettings(elem) {
+
+   var that = this
+   this.blocks = []
+   this.blocks.push(new Range('fas fa-arrows-alt-h', 'Width', 'button-width', elem, {min: 100, max: 300, standart: 150}))
+   this.blocks.push(new Range('fas fa-text-width', 'FontSize', 'buttonFontSize', elem, {min: 5, max: 50, standart: 14}))
+
+   this.blocks.push(new Range('fab fa-cuttlefish', 'borderRadius', 'borderRadius', elem, {min: 0, max: 100, standart: 0}))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'button-color', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'BackgroundColor', 'background', elem))
+   this.blocks.push(new Color('fas fa-eye-dropper', 'BorderColor', 'border', elem))
+
+   settingsBlock.innerHTML = ''
+   for (var i = 0; i < this.blocks.length; i++) {
+      settingsBlock.appendChild(this.blocks[i].elem)
+   }
+
+}
+
+
+
+
+
+
+
+
+
 
 function Range(img, text, style, form, limits) {
 
@@ -200,103 +285,3 @@ function OptionAdder(form) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function LabelSettings(elem) {
-   
-   var that = this
-   this.blocks = []
-   this.blocks.push(new Range('fas fa-arrows-alt-h', 'Width', 'width', elem, {min: 100, max: 300, standart: 150}))
-   this.blocks.push(new Range('fas fa-text-width', 'FontSize', 'fontSize', elem, {min: 5, max: 50, standart: 14}))
-   this.blocks.push(new Range('fab fa-cuttlefish', 'borderRadius', 'borderRadius', elem, {min: 0, max: 100, standart: 0}))
-   this.blocks.push(new SelectInSetting('fas fa-font', 'FontFamily', '<select><option>Arial</option><option>Times New Roman</option></select>', 'FontFamily', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'color', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'BackgroundColor', 'background', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'BorderColor', 'border', elem))
-
-   settingsBlock.innerHTML = ''
-   for (var i = 0; i < this.blocks.length; i++) {
-      settingsBlock.appendChild(this.blocks[i].elem)
-   }
-
-}
-
-
-function RadioSettings(elem) {
-   
-   var that = this
-   this.blocks = []
-   this.blocks.push(new TextElem('fas fa-layer-group', 'Group', elem))
-   this.blocks.push(new Range('fas fa-arrows-alt-h', 'Width', 'width', elem, {min: 100, max: 300, standart: 150}))
-   this.blocks.push(new Range('fas fa-text-width', 'FontSize', 'fontSize', elem, {min: 5, max: 50, standart: 14}))
-   this.blocks.push(new Range('fab fa-cuttlefish', 'borderRadius', 'borderRadius', elem, {min: 0, max: 100, standart: 0}))
-   this.blocks.push(new SelectInSetting('fas fa-font', 'FontFamily', '<select><option>Arial</option><option>Times New Roman</option></select>', 'FontFamily', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'color', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'BackgroundColor', 'background', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'BorderColor', 'border', elem))
-
-   settingsBlock.innerHTML = ''
-   for (var i = 0; i < this.blocks.length; i++) {
-      settingsBlock.appendChild(this.blocks[i].elem)
-   }
-
-}
-
-
-function SelectSettings(elem) {
-   
-   var that = this
-   this.blocks = []
-   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'selectColor', elem))
-   this.blocks.push(new OptionAdder(elem))
-
-   settingsBlock.innerHTML = ''
-   for (var i = 0; i < this.blocks.length; i++) {
-      settingsBlock.appendChild(this.blocks[i].elem)
-   }
-
-}
-
-
-function ButtonSettings(elem) {
-
-   var that = this
-   this.blocks = []
-   this.blocks.push(new Range('fas fa-arrows-alt-h', 'Width', 'button-width', elem, {min: 100, max: 300, standart: 150}))
-   this.blocks.push(new Range('fas fa-text-width', 'FontSize', 'buttonFontSize', elem, {min: 5, max: 50, standart: 14}))
-
-   this.blocks.push(new Range('fab fa-cuttlefish', 'borderRadius', 'borderRadius', elem, {min: 0, max: 100, standart: 0}))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'FontColor', 'button-color', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'BackgroundColor', 'background', elem))
-   this.blocks.push(new Color('fas fa-eye-dropper', 'BorderColor', 'border', elem))
-
-   settingsBlock.innerHTML = ''
-   for (var i = 0; i < this.blocks.length; i++) {
-      settingsBlock.appendChild(this.blocks[i].elem)
-   }
-
-}
