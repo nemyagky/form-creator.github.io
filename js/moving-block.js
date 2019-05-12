@@ -92,7 +92,6 @@ function MovingBlock() {
 
    this.createNewForm = function(elem, e, type) {
       that.canBeMoving = false
-
       if ( that.block && isFormCreatorUnderCursor(e) ) {
          that.wasAdded = true
 
@@ -124,13 +123,13 @@ function MovingBlock() {
             that.settings = new LabelSettings(that.block)
          }
          if (type == 'radio') {
-            that.settings = new LabelSettings(that.block)
+            that.settings = new RadioSettings(that.block)
          }
          if (type == 'checkbox') {
-            that.settings = new LabelSettings(that.block)
+            that.settings = new RadioSettings(that.block)
          }
          if (type == 'select') {
-            that.settings = new LabelSettings(that.block)
+            that.settings = new SelectSettings(that.block)
          }
          if (type == 'button') {
             that.settings = new ButtonSettings(that.block)

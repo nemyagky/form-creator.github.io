@@ -152,7 +152,6 @@ function Email() {
 
 
 
-
 function Radio() {
    var that = this
 
@@ -164,7 +163,7 @@ function Radio() {
       // Функция из moving-block.js
       if (!that.wasAdded && that.shouldWeAddForm) {
          that.shouldWeAddForm = false
-         that.createNewForm('<div class="form_element"><div class="mover"></div><div class="label_elem"><i class="fas fa-envelope"></i><input type="text" class="form_element_input" placeholder="E-mail"></div></div>', e, 'radio')
+         that.createNewForm('<div class="form_element"><div class="mover"></div><div class="label_elem"><input type="radio" name=""><input type="text" class="form_element_input" placeholder="Text"></div></div>', e, 'radio')
       }
       that.shouldWeDeleteForm(e)
    })
@@ -184,7 +183,7 @@ function Checkbox() {
       // Функция из moving-block.js
       if (!that.wasAdded && that.shouldWeAddForm) {
          that.shouldWeAddForm = false
-         that.createNewForm('<div class="form_element"><div class="mover"></div><div class="label_elem"><i class="fas fa-envelope"></i><input type="text" class="form_element_input" placeholder="E-mail"></div></div>', e, 'checkbox')
+         that.createNewForm('<div class="form_element"><div class="mover"></div><div class="label_elem"><input type="radio" name=""><input type="text" class="form_element_input" placeholder="Text"></div></div>', e, 'checkbox')
       }
       that.shouldWeDeleteForm(e)
    })
@@ -203,11 +202,13 @@ function Select() {
       // Функция из moving-block.js
       if (!that.wasAdded && that.shouldWeAddForm) {
          that.shouldWeAddForm = false
-         that.createNewForm('<div class="form_element"><div class="mover"></div><div class="label_elem"><i class="fas fa-envelope"></i><input type="text" class="form_element_input" placeholder="E-mail"></div></div>', e, 'select')
+         that.createNewForm('<div class="form_element"><div class="mover"></div><select class="label_elem"><option disabled selected>Выбор</option></select></div>', e, 'select')
       }
       that.shouldWeDeleteForm(e)
    })
 }
+
+
 
 
 
@@ -227,3 +228,4 @@ function Button() {
       that.shouldWeDeleteForm(e)
    })
 }
+

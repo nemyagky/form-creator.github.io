@@ -118,7 +118,8 @@ body
             transition: 0.2s
             cursor: move
             opacity: 0
-            
+
+
          .label_elem
             display: flex
             overflow: hidden
@@ -139,12 +140,20 @@ body
                font-size: 14px
                font-weight: 600
                border: none
+
+         select
+            padding-left: 10px
+
+
+
          .button
             background-color: #fff
             width: 150px
             height: 30px
             border: none
             box-shadow: 0 2px 5px 1px rgba(0,0,0,0.3)
+         input[type="radio"]
+            margin: 0 5px 0 10px
 
 
 .settings_wrapper
@@ -202,3 +211,49 @@ body
             width: 40px
             height: 23px
             padding: 2px
+         input[type="text"]
+            border: none
+            width: 100px
+            height: 17px
+            box-shadow: 0 0px 2px 1px rgba(0,0,0,0.3)
+
+.setting-adder
+   flex-direction: column
+   
+   .wrapper-of-adder
+      display: flex
+      align-items: center
+      margin-left: 20px
+
+      input
+         width: 130px !important
+         height: 25px !important
+         padding-left: 10px
+      i
+         font-size: 14px
+         cursor: pointer
+
+   .wrapper-of-added-options
+      display: flex
+      width: 100%
+
+      .left-colomn
+         display: flex
+         align-items: center
+         width: 110px
+         margin-left: 10px
+
+      .right-colomn
+         padding: 0 0 0 10px
+         flex-grow: 1
+         
+         li
+            display: flex
+            align-items: center
+            i
+               margin: 0
+               margin-left: 5px
+               cursor: pointer
+               
+            p
+               margin: 3px 0
